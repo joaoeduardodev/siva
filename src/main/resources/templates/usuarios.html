@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="https://www.w3.org/1999/xhtl"
+	layout:decorate="~{layout}">
+
+<head>
+<meta charset="UTF-8">
+<title>Listar usuarios</title>
+</head>
+
+<section class="layout-content"  layout:fragment="conteudo">
+
+	<div class="container">
+		<nav class="navbar navbar-expand-md bg-secondary text-light">
+			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<h4>Lista de Usuarios</h4>
+					</li>
+				</ul>
+				<a class="btn btn-primary btn-md" href="/cadastrarUsuario" role="button"> <span
+					class="oi oi-plus" title="Cadastro" aria-hidden="true"></span> <span>Cadastrar
+						Usuarios</span>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<div class="container">
+		<div class="table-responsive">
+			<table class="table table-striped table-hover table-sm">
+				<thead>
+					<tr>
+					
+                    <th >#</th>
+                    <th>Nome</th>
+                    <th>Senha</th>
+                    <th>Acões</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="usuario : ${usuarios}">
+						<td th:text="${usuario.id}"></td>
+						<td th:text="${usuario.nome}"></td>
+						<td th:text="${usuario.senha}"></td>
+						<td colspan="2"><a class="btn btn-primary btn-sm mr-2"
+							role="button" th:href="@{/editarUsuario/{id}(id=${usuario.id})}"> <span class="oi oi-pencil" title="Editar"
+								aria-hidden="true"></span><a data-toggle="modal"
+								data-target="#modal-warning" class="btn btn-danger btn-sm ml-2" th:attr="data-target='#modal-warning'+${usuario.id}"><span
+									class="oi oi-x text-light" title="Excluir" aria-hidden="true"></span></a></td>
+						<div class="modal modal-warning fade in"
+							th:id="modal-warning+${usuario.id}">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h2 class="modal-title">Atenção</h2>
+									</div>
+									<div class="modal-body">
+										<h5>Confirma a exclusão do registro?</h5>
+									</div>
+									<div class="modal-footer">
+										<a type="button" class="btn btn-outline" th:href="@{/excluirUsuario/{id}(id=${usuario.id})}">Sim</a>
+										<button type="button" class="btn btn-outline pull-left"
+											data-dismiss="modal">Não</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</section>
+</body>
+
+</html>

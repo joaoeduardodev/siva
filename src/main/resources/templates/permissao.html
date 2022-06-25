@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="https://www.w3.org/1999/xhtl"
+	layout:decorate="~{layout}">
+
+<head>
+<meta charset="UTF-8">
+<title>Cadastrar permissoes</title>
+</head>
+
+<section class="layout-content" layout:fragment="conteudo">
+
+	<div class="container">
+		<nav class="navbar navbar-expand-md bg-secondary text-light">
+			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<h4>Permissoes</h4>
+					</li>
+				</ul>
+				<a class="btn btn-primary btn-md" href="cadastrarPermissao"
+					role="button"> <span class="oi oi-plus" title="Cadastro"
+					aria-hidden="true"></span> <span>Cadastrar permissao</span>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<div class="container">
+		<form action="/salvarPermissao" method="POST" th:object=${permissao}>
+			<div class="form-group row p-5">
+
+				<label for="usuario" class="col-sm-4 col-form-label">Usuário</label>
+				<div class="col-sm-8">
+					<select id="usuario" class="form-control" th:field="*{usuario}">
+						<option th:each="usuario: ${usuarios}" th:value="${usuario.id}"
+							th:text="${usuario}">Selecione</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group row p-5">
+				<label for="usuario" class="col-sm-4 col-form-label">Acesso</label>
+				<div class="col-sm-8">
+					<select id="role" class="form-control" th:field="*{role}">
+						<option th:each="role: ${roles}" th:value="${role.id}"
+							th:text="${role}">Selecione</option>
+					</select>
+				</div>
+			</div>
+			<br><br><br><br>
+            <input type="hidden" id="id" th:field="*{id}" value="" />
+            <input class="btn btn-primary" type="submit" value="Salvar">
+		</form>
+	</div>
+</section>
+</body>
+
+</html>

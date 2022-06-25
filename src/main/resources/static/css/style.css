@@ -1,0 +1,103 @@
+/*
+ * Base structure
+ */
+html, body {
+	height: 100%;
+}
+
+body {
+	padding-top: 10px;
+	padding-left: 0;	
+}
+
+/*
+ * main layout
+ */
+.layout-main {
+	display: flex;
+	min-height: calc(100vh - 70px);
+	overflow: hidden;
+	justify-content: center;
+	align-items: center;	
+}
+
+/*
+ * Content
+ */
+.layout-content {
+	width: 100%;
+	padding-top: 0px;
+	text-align: center;
+}
+
+.container {
+	width: 100%;
+	padding-top: 20px;
+}
+
+/*
+ * nav-pills home
+ */
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+	color: #fff;
+	background-color: #1e94d2;
+}
+
+/*
+ * toogle do navbar do menu
+ */
+.navbar-toggle {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+/*
+ * Footer
+ */
+.layout-footer {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0;
+	height: 50px;
+	border-top: 1px solid #eeeeee;
+}
+
+.footer-copy {
+	font-size: 92%;
+	display: block;
+	color: #777777;
+	text-align: center;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
