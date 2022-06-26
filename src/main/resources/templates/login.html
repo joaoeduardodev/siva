@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
+
 <title>Piloto</title>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,7 +9,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<link rel="icon" href="/image/favicon.png" />
+<link rel="icon" href="/image/logo.png" />
 <!-- Bootstrap core CSS -->
 <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 <link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css"
@@ -22,15 +23,16 @@
 }
 .login-form form {        
     margin-bottom: 15px;
-    background: #f7f7f7;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
     padding: 30px;
+    border-radius: 20px;
 }
 .login-form h2 {
     margin: 0 0 15px;
 }
 .form-control, .login-btn {
-    border-radius: 2px;
+    border-radius: 10px;
 }
 .input-group-prepend .fa {
     font-size: 18px;
@@ -49,7 +51,7 @@
     opacity: 0.9;
 }
 .social-btn .btn-secondary, .social-btn .btn-secondary:active {
-    background: #507cc0 !important;
+    background: #1e94d2 !important;
 }
 .social-btn .btn-info, .social-btn .btn-info:active {
     background: #64ccf1 !important;
@@ -64,7 +66,7 @@
 }
 .or-seperator i {
     padding: 0 10px;
-    background: #f7f7f7;
+    background: #000000;
     position: relative;
     top: -11px;
     z-index: 1;
@@ -72,41 +74,37 @@
 </style>
 </head>
 <body>
-<div class="login-form">
+    <div class="form-container">
+    <div class="form-image">
+        <img src="../image/login-img.svg">
+    </div>
+    <div class="form">
     <form th:action="@{/login}" method="post">
-        <h2 class="text-center">Projeto Piloto</h2>   
+        <center>
+        <h2 class="text-center">SIVA</h2> 
+        <h3 class="text-center">Acesse sua conta ou crie uma.</h3>
+        <br>
         <div class="form-group">
         	<div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <span class="oi oi-person"></span>
-                    </span>                    
-                </div>
-                <input type="text" class="form-control" name="username" placeholder="Usuário" required="required">				
+                <input type="text" class="form-control" name="username" placeholder="Digite seu usuário" required="required">				
             </div>
         </div>
 		<div class="form-group">
             <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <span class="oi oi-key"></span>
-                    </span>                    
-                </div>
-                <input type="password" class="form-control" name="password" placeholder="Senha" required="required">				
+                <input type="password" class="form-control" name="password" placeholder="Digite sua senha" required="required">			
             </div>
-        </div>        
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary login-btn btn-block">Login</button>
-        </div>       
-		<div class="or-seperator"><i>or</i></div>
-        <p class="text-center">Ou faça o login com sua conta de rede social</p>
-        <div class="text-center social-btn">
-            <a href="#" class="btn btn-secondary"><i class="fa fa-facebook"></i>&nbsp; Facebook</a>
-            <a href="#" class="btn btn-info"><i class="fa fa-twitter"></i>&nbsp; Twitter</a>
-			<a href="#" class="btn btn-danger"><i class="fa fa-google"></i>&nbsp; Google</a>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary login-btn btn-block">Login</button>
+            </div>
         </div>
-    </form>    
+        
+    </center>
+            <a href="#" class="btn btn-secondary">Voltar para home</a>
+        </form> 
+        </div>
 </div>
+
+        <h3><center>Faça login para aproveitar um universo repleto de vagas de estágio, de trabalho e experiências.<br>Saiba que estamos aqui para fazer parte dessa longa jornada.</center></h3>
 	
 	<!-- Bootstrap core JavaScript
     ================================================== -->
