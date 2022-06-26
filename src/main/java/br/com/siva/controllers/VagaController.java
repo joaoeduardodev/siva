@@ -46,7 +46,7 @@ public class VagaController {
 		
 		vagaRepo.saveAndFlush(vaga);
 		
-		return new ModelAndView("redirect:/listarCidade");
+		return new ModelAndView("redirect:/listarVaga");
 	}
 	
 	@GetMapping("/editarVaga/{id}")
