@@ -36,6 +36,11 @@ public class VagaController {
 		return mv;
 	}
 	
+	@GetMapping("buscarVaga")
+	public ModelAndView buscar() {
+		
+	}
+	
 	@GetMapping("/cadastrarVaga")
 	public ModelAndView cadastrar(Vaga vaga) {
 		ModelAndView mv = new ModelAndView("vaga");
