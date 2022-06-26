@@ -32,15 +32,17 @@
 			class="nav-bar">
 
 			<nav class="my-2 my-md-0 mr-md-3">
-				<img src="/image/logo.png">
-				<a class="p-2 text-dark" href="/">Início</a> 
-				<a sec:authorize="hasAuthority('cidade')" class="p-2 text-dark" th:href="@{/listarCidade}">Cidades</a> 
-				<a sec:authorize="hasAuthority('estado')" class="p-2 text-dark" th:href="@{/listarEstado}">Estados</a> 
-				<a sec:authorize="hasAuthority('usuario')"class="p-2 text-dark" th:href="@{/listarUsuario}">Usuarios</a>
-				<a sec:authorize="hasAuthority('permissao')" class="p-2 text-dark" th:href="@{/listarPermissao}">Permissao</a>
-				<a class="p-2 text-dark" href="#">Sobre nós</a>
-				<a class="p-2 text-dark" href="/listarRole">Acesso</a>
-				<a class="p-2 text-dark" href="/login">Login</a>
+				<a class="p-2 text-dark" href="/">Home</a> <a
+					sec:authorize="hasAuthority('usuario')" class="p-2 text-dark"
+					th:href="@{/listarUsuario}">Usuários</a> <a
+					sec:authorize="hasAuthority('cidade')" class="p-2 text-dark"
+					th:href="@{/listarCidade}">Cidades</a> <a
+					sec:authorize="hasAuthority('estado')" class="p-2 text-dark"
+					th:href="@{/listarEstado}">Estados</a> <a
+					sec:authorize="hasAuthority('permissao')" class="p-2 text-dark"
+					th:href="@{/listarPermissao}">Permissao</a> 
+					<a sec:authorize="hasAuthority('vaga')" class="p-2 text-dark" th:href="@{/listarVaga}">Vagas</a>
+					<a class="p-2 text-dark" href="/listarRole">Acessos</a>
 			</nav>
 
 			
