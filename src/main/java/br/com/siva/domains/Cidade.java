@@ -24,6 +24,8 @@ public class Cidade {
 
 	@NotBlank(message = "Preencha o campo cidade devidamente!!!")
 	private String nome;
+	@NotBlank(message = "Preencha o campo cep devidamente!!!")
+	private String cep;
 	@ManyToOne
 	private Estado estado;
 	
@@ -38,6 +40,12 @@ public class Cidade {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}	
+	public String getCep() {
+		return cep;
+	}
+	public void setCep(String cep) {
+		this.cep = cep;
 	}	
 	public Estado getEstado() {
 		return estado;

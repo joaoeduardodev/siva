@@ -31,6 +31,7 @@
 					<tr>
 						<th>#</th>
 						<th>Cidade</th>
+						<th>Cep</th>
 						<th>Estado</th>
 						<th>Ação</th>
 					</tr>
@@ -39,6 +40,7 @@
 					<tr th:each="cidade : ${cidades}">
 						<td th:text="${cidade.id}"></td>
 						<td th:text="${cidade.nome}"></td>
+						<td th:text="${cidade.cep}"></td>
 						<td th:text="${cidade.estado}"></td>
 						<td colspan="2"><a th:href="@{/editarCidade/{id}(id=${cidade.id})}" class="btn btn-primary btn-sm mr-2"
 							role="button"> <span class="oi oi-pencil" title="Editar"

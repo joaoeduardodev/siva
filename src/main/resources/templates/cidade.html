@@ -14,13 +14,12 @@
 			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
-						<h4>Lista de Cidades</h4>
+						<h4>Cadastro de Cidades</h4>
 					</li>
 				</ul>
-				<a class="btn btn-primary btn-md" href="cadastrarCidade"
-					role="button"> <span class="oi oi-plus" title="Cadastro"
-					aria-hidden="true"></span> <span>Cadastrar Cidade</span>
-				</a>
+				<a class="btn btn-danger btn-md" href="listarCidade" role="button"> <span class="oi oi-arrow-left"
+					title="Cadastro" aria-hidden="true"></span> <span>Voltar para listagem de cidades</span>
+			</a>
 			</div>
 		</nav>
 	</div>
@@ -28,8 +27,12 @@
 		<form action="/salvarCidade" method="POST" th:object=${cidade}>
 		<div class="form-group">
 		
-		<label for="nome">Cidade</label> <input class="form-control" type="text" id="nome"
+				<label for="nome">Cidade</label> <input class="form-control" type="text" id="nome"
 				autofocus="autofocus" th:field="*{nome}" value="">
+				<div class="invalid-feedback"></div>
+				 <br>
+				<label for="cep">Cep</label> <input class="form-control" type="text" id="cep"
+				autofocus="autofocus" th:field="*{cep}" value="">
 				<div class="invalid-feedback"></div>
 				 <br>
 			<br> <br> <br> <label for="estado">Estado</label> <select class="form-control"
@@ -39,6 +42,7 @@
 			</select>
 			<div class="col-12 py-5">
 					<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="alert alert-danger"></span>
+					<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="alert alert-danger"></span>
 				</div>
 			 <input type="hidden" id="id"
 				th:field="*{id}" value="" /> <input class="btn btn-primary" type="submit" value="Salvar">
