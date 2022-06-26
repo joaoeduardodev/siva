@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.siva.domains.Vaga;
+import br.com.siva.repositories.CidadeRepositorio;
+import br.com.siva.repositories.EmpresaRepositorio;
 import br.com.siva.repositories.VagaRepositorio;
 
 
@@ -21,6 +23,10 @@ public class VagaController {
 	
 	@Autowired
 	private VagaRepositorio vagaRepo;
+	@Autowired
+	private CidadeRepositorio cidadeRepo;
+	@Autowired
+	private EmpresaRepositorio empresaRepo;
 	
 	@GetMapping("/listarVaga")
 	public ModelAndView listar() {		
@@ -34,6 +40,8 @@ public class VagaController {
 	public ModelAndView cadastrar(Vaga vaga) {
 		ModelAndView mv = new ModelAndView("vaga");
 		mv.addObject("vaga", vaga);
+		mv.addObject("empresas", empresaRepo.findAll());
+		mv.addObject("cidades", cidadeRepo.findAll());
 		
 		return mv;
 	}

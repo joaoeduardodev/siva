@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -26,6 +27,10 @@ public class Vaga {
 	private String titulo;
 	@NotBlank(message = "Preencha o campo descrição devidamente!!!")
 	private String descricao;
+	@ManyToOne
+	private Cidade cidade;
+	@ManyToOne
+	private Empresa empresa;
 	
 	public Long getId() {
 		return id;
@@ -44,6 +49,18 @@ public class Vaga {
 	}
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+	public Cidade getCidade() {
+		return cidade;
+	}
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
+	}
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
 	}
 	
 	@Override
