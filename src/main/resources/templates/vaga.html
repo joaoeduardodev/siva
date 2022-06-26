@@ -34,6 +34,16 @@
 					autofocus="autofocus" th:field="*{descricao}" value="">
 				<div class="invalid-feedback"></div>
 				<br>
+				<label for="empresa">Empresa</label> <select class="form-control"
+				id="empresa" th:field="*{empresa}">
+				<option th:each="empresa: ${empresas}" th:value="${empresa.id}"
+					th:text="${empresa}">Selecione...</option>
+				</select>
+				<label for="cidade">Cidade</label> <select class="form-control"
+				id="cidade" th:field="*{cidade}">
+				<option th:each="cidade: ${cidades}" th:value="${cidade.id}"
+					th:text="${cidade}">Selecione...</option>
+				</select>
 
 				<div class="col-12 py-5">
 					<span th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}" class="alert alert-danger"></span>

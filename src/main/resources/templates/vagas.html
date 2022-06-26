@@ -29,9 +29,11 @@
 			<table class="table table-striped table-hover table-sm">
 				<thead>
 					<tr>
-						<th>#</th>
+						<th>Código da vaga</th>
 						<th>titulo</th>
 						<th>Descrição</th>
+						<th>Empresa</th>
+						<th>Cidade da vaga</th>
 						<th>Ação</th>
 					</tr>
 				</thead>
@@ -40,6 +42,8 @@
 						<td th:text="${vaga.id}"></td>
 						<td th:text="${vaga.titulo}"></td>
 						<td th:text="${vaga.descricao}"></td>
+						<td th:text="${vaga.empresa}"></td>
+						<td th:text="${vaga.cidade}"></td>
 						<td colspan="2"><a th:href="@{/editarVaga/{id}(id=${vaga.id})}" class="btn btn-primary btn-sm mr-2"
 							role="button"> <span class="oi oi-pencil" title="Editar"
 								aria-hidden="true"></span><a data-toggle="modal"
