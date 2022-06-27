@@ -5,14 +5,14 @@
 	xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
 
 <head>
-<title>SIVA</title>
+<title>Layout</title>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<link rel="icon" href="/image/logo.png" />
+<link rel="icon" href="/image/favicon.png" />
 
 <!-- Bootstrap core CSS -->
 <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -27,11 +27,14 @@
 <body>
 
 	<header>
+		<div
+			class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
 
-		<img
-			class="nav-bar">
+			<h3 class="my-0 mr-md-auto font-weight-normal">Projeto Piloto
+				Spring</h3>
 
 			<nav class="my-2 my-md-0 mr-md-3">
+
 				<a class="p-2 text-dark" href="/">Home</a> <a
 					sec:authorize="hasAuthority('usuario')" class="p-2 text-dark"
 					th:href="@{/listarUsuario}">Usuários</a> <a
@@ -44,22 +47,22 @@
 					<a sec:authorize="hasAuthority('vaga')" class="p-2 text-dark" th:href="@{/listarVaga}">Vagas</a>
 					<a class="p-2 text-dark" href="/listarRole">Acessos</a>
 			</nav>
-
-			
+			<a class="btn btn-outline-primary" href="/logout">Sair</a> <span
+				sec:authentication="name" class="ml-2 mr-2"></span>
 		</div>
 	</header>
 	<div class="layout-main">
 
 		<section class="layout-content" layout:fragment="conteudo">
-			<img alt="Brasil" src="https://www.stoodi.com.br/wp-content/uploads/2020/09/brasil-coloniza%C3%A7%C3%A3o-1280x1024.png">
+			<h1>Exemplo de fragmento Thymeleaf</h1>
 		</section>
 	</div>
-	<!-- <footer class="layout-footer">
+	<footer class="layout-footer">
 		<div class="container">
 			<span class="footer-copy">&copy; 2022 - 7º Período - PDS - SI
 				- IFSULDEMINAS. Todos os direitos reservados.</span>
 		</div>
-	</footer> -->
+	</footer>
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->
