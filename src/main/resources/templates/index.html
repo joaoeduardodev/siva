@@ -11,11 +11,28 @@
 	<section class="layout-content" layout:fragment="conteudo">
 
 	<div class="jumbotron text-white">
-		<div id="banner-principal" class="p-5 rounded">
+		<div id="banner-principal" class="p-5 rounded text-center m-3">
 			<h1 class="display-4 mx-5">SIVA</h1>
-			<h4>SIVA é uma plataforma completa, onde você encontra as melhores oportunidade</h4>
+			<h4>SIVA é uma plataforma completa, onde você encontra as melhores oportunidades</h4>
+			<button type="button" class="btn bg-vermelho text-white mt-3 btn-lg">Buscar Oportunidades</button>
 		</div>
 	  </div>
+
+	  <section class="container">
+			<h1 class="text-center my-5">Vagas em Destaque</h1>
+			<div id="accordion" class="pt-5">
+				<div class="card my-4" th:each="vaga : ${vagas}">
+				  <div class="card-header" id="headingOne">
+					  <span th:text="${vaga.titulo+' | Empresa: ' +vaga.empresa.nome}" class="text-left btn btn-lg btn-block" data-toggle="collapse" th:data-target="${'#collapse'+vaga.id}" aria-expanded="true" th:aria-controls="collapse+${vaga.id}">
+					  </span>
+				  </div>
+			  
+				  <div th:id="collapse+${vaga.id}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+					<div class="card-body" th:utext="${vaga.descricao}"></div>
+				  </div>
+				</div>
+			  </div>
+	  </section>
 
 
 	</section>
