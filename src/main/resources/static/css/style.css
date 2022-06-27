@@ -1,14 +1,38 @@
 /*
  * Base structure
  */
-html, body {
+html,
+body {
 	height: 100%;
 }
 
 body {
-	padding-top: 10px;
-	padding-left: 0;	
+	padding-left: 0;
 }
+
+/* 
+ * text
+ */
+.vermelho {
+	color: #800000;
+}
+
+/* 
+ * banner principal
+ */
+.jumbotron {
+	background-image: url("https://cdn.wizard.com.br/wp-content/uploads/2021/04/16152147/ambientes-de-trabalho-em-ingles.jpg");
+
+	background-size: cover;
+}
+
+#banner-principal {
+	background-color: rgba(0, 0, 0, 0.7);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 
 /*
  * main layout
@@ -18,7 +42,6 @@ body {
 	min-height: calc(100vh - 70px);
 	overflow: hidden;
 	justify-content: center;
-	align-items: center;	
 }
 
 /*
@@ -38,7 +61,8 @@ body {
 /*
  * nav-pills home
  */
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
 	color: #fff;
 	background-color: #1e94d2;
 }
@@ -72,32 +96,32 @@ body {
 }
 
 .form-signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
+	width: 100%;
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
 }
 
 .form-signin .form-control {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 10px;
-  font-size: 16px;
+	position: relative;
+	box-sizing: border-box;
+	height: auto;
+	padding: 10px;
+	font-size: 16px;
 }
 
 .form-signin .form-control:focus {
-  z-index: 2;
+	z-index: 2;
 }
 
 .form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+	margin-bottom: -1px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
 }
 
 .form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 }
