@@ -14,7 +14,10 @@ body {
  * text
  */
 .vermelho {
-	color: #800000;
+	color: #ba5959;
+}
+.bg-vermelho {
+	background-color: #ba5959;
 }
 
 /* 
@@ -28,9 +31,6 @@ body {
 
 #banner-principal {
 	background-color: rgba(0, 0, 0, 0.7);
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
 
@@ -50,7 +50,6 @@ body {
 .layout-content {
 	width: 100%;
 	padding-top: 0px;
-	text-align: center;
 }
 
 .container {
