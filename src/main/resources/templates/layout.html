@@ -72,5 +72,20 @@
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	
+	<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+	<script>
+		let inputElement = document.getElementById('descricao')
+		var quill = new Quill('#editor-container', {
+			theme: 'snow'
+		});
+		quill.on('text-change', function() {
+			inputElement.value = quill.root.innerHTML
+		});
+		$(document).ready(function(){
+			quill.root.innerHTML = inputElement.value
+		});
+		
+	</script>
 </body>
 </html>

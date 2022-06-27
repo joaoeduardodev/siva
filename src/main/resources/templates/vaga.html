@@ -4,7 +4,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Cadastrar vaga</title>
+	<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
+
+
 
 <section class="layout-content" layout:fragment="conteudo">
 
@@ -23,15 +26,19 @@
 		</nav>
 	</div>
 	<div class="container">
-		<form action="/salvarVaga" method="POST" th:object=${vaga}>
+		<form id="form" action="/salvarVaga" method="POST" th:object=${vaga}>
 			<div class="form-group">
 
 				<label for="nome">titulo da vaga</label> <input class="form-control" type="text" id="titulo"
 					autofocus="autofocus" th:field="*{titulo}" value="">
 				<div class="invalid-feedback"></div>
 				<br>
-				<label for="nome">Descrição da vaga</label> <input class="form-control" type="text" id="descricao"
-					autofocus="autofocus" th:field="*{descricao}" value="">
+				
+					<label for="descricao">Descrição da vaga</label> 
+					<input name="descricao" id="descricao" th:field="*{descricao}" type="hidden">
+					<div id="editor-container">
+					</div>
+				 
 				<div class="invalid-feedback"></div>
 				<br>
 				<label for="empresa">Empresa</label> <select class="form-control"
@@ -56,6 +63,10 @@
 		</form>
 	</div>
 </section>
+<!-- Include the Quill library -->
+
+<!-- Initialize Quill editor -->
+
 </body>
 
 </html>
