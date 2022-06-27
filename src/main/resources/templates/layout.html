@@ -47,8 +47,8 @@
 					<a sec:authorize="hasAuthority('vaga')" class="p-2 text-dark" th:href="@{/listarVaga}">Vagas</a>
 					<a class="p-2 text-dark" href="/listarRole">Acessos</a>
 			</nav>
-			<a class="btn btn-outline-primary" href="/logout">Sair</a> <span
-				sec:authentication="name" class="ml-2 mr-2"></span>
+			<a id="button-login-logout" class="btn btn-outline-primary" href="/logout">Sair</a> <span
+				sec:authentication="name" id="nome-usuario" class="ml-2 mr-2"></span>
 		</div>
 	</header>
 	<div class="layout-main">
@@ -59,8 +59,7 @@
 	</div>
 	<footer class="layout-footer">
 		<div class="container">
-			<span class="footer-copy">&copy; 2022 - 7º Período - PDS - SI
-				- IFSULDEMINAS. Todos os direitos reservados.</span>
+			<span class="footer-copy">&copy; 2022 - SIVA. Todos os direitos reservados.</span>
 		</div>
 	</footer>
 
@@ -76,6 +75,16 @@
 	<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 	<script>
 		let inputElement = document.getElementById('descricao')
+		let nomeUsuario = document.getElementById('nome-usuario').textContent
+		if(nomeUsuario == 'anonymousUser'){
+			document.getElementById('nome-usuario').style.display = "none"
+			document.getElementById('button-login-logout').href = "/login"
+			document.getElementById('button-login-logout').innerHTML = "Login"
+		}else{
+			document.getElementById('nome-usuario').style.display = "block"
+			document.getElementById('button-login-logout').href = "/logout"
+			document.getElementById('button-login-logout').innerHTML = "Sair"
+		}
 		var quill = new Quill('#editor-container', {
 			theme: 'snow'
 		});
