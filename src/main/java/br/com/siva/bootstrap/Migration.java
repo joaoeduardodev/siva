@@ -39,12 +39,18 @@ public class Migration implements CommandLineRunner {
 		role5.setNome("usuario");
 		Role role6 = new Role();
 		role6.setNome("estado");
+		Role role7 = new Role();
+		role7.setNome("empresa");
+		Role role8 = new Role();
+		role8.setNome("vaga");
 		roleRepository.save(role1);
 		roleRepository.save(role2);
 		roleRepository.save(role3);
 		roleRepository.save(role4);
 		roleRepository.save(role5);
 		roleRepository.save(role6);
+		roleRepository.save(role7);
+		roleRepository.save(role8);
 		
 		Usuario usuario1 = new Usuario();
 		usuario1.setNome("admin");
@@ -69,12 +75,20 @@ public class Migration implements CommandLineRunner {
 		Permissao permissao6 = new Permissao();
 		permissao6.setRole(role6);
 		permissao6.setUsuario(usuario1);
+		Permissao permissao7 = new Permissao();
+		permissao7.setRole(role7);
+		permissao7.setUsuario(usuario1);
+		Permissao permissao8 = new Permissao();
+		permissao8.setRole(role8);
+		permissao8.setUsuario(usuario1);
 		permissaoRepository.save(permissao1);
 		permissaoRepository.save(permissao2);
 		permissaoRepository.save(permissao3);
 		permissaoRepository.save(permissao4);
 		permissaoRepository.save(permissao5);
 		permissaoRepository.save(permissao6);
+		permissaoRepository.save(permissao7);
+		permissaoRepository.save(permissao8);
 		
 	}
 
