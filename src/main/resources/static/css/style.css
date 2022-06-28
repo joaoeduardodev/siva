@@ -12,6 +12,16 @@ body {
 .btn{
 	border-radius: 50rem!important;
 }
+.btn-border-right{
+	border-radius: 0 !important;
+	border-bottom-right-radius: 50rem !important;
+	border-top-right-radius: 50rem !important;
+}
+
+.input-border-left{
+	border-bottom-left-radius: 50rem !important;
+	border-top-left-radius: 50rem !important;
+}
 
 /* 
  * text
