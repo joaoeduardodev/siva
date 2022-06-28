@@ -27,21 +27,26 @@
 	<div class="container">
 		<form action="/salvarEstado" method="POST" th:object=${estado}>
 		<div class="form-group">
+			<div class="row">
+			<div class="col">
             <label for="nome">Estado</label>
             <input class="form-control" type="text" id="nome" autofocus="autofocus" th:field="*{nome}" value="">
-            <br><br><br><br>
+			<br>
+			</div>
+			<div class="col">
             <label for="sigla">Sigla</label>
-             <input class="form-control" type="text" id="sigla" th:field="*{sigla}" value=""/>
-            <br><br><br><br>
+            <input class="form-control" type="text" id="sigla" th:field="*{sigla}" value=""/>
+			<br>
+			</div>
             <div class="col-12 py-5">
 					<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="alert alert-danger"></span>
-					
 					<span th:if="${#fields.hasErrors('sigla')}" th:errors="*{sigla}" class="alert alert-danger"></span>
 				</div>
             <input type="hidden" id="id" th:field="*{id}" value="" />
             <input class="btn btn-dark" type="submit" value="Salvar">
             </div>
           </form>
+		</div>
 	</div>
 </section>
 </body>

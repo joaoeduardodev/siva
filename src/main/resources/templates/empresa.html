@@ -29,28 +29,39 @@
 		<form action="/salvarEmpresa" method="POST" th:object=${empresa}>
 			<div class="form-group">
 				<div class="invalid-feedback"></div>
-				<label for="nome">Nome</label> <input class="form-control"
-					type="text" id="nome" autofocus="autofocus" th:field="*{nome}"
-					value=""> <label for="nome">CNPJ</label> <input
-					class="form-control" type="text" id="cnpj" autofocus="autofocus"
-					th:field="*{cnpj}" value=""> <label for="nome">E-mail</label>
-				<input class="form-control" type="text" id="email"
-					autofocus="autofocus" th:field="*{email}" value="">
-					<label for="nome">URL do logo</label>
-				<input class="form-control" type="text" id="logo"
-					autofocus="autofocus" th:field="*{logo}" value="">
+				<div class="row">
+				<div class="col">
+				<label for="nome">Nome</label> 
+				<input class="form-control" type="text" id="nome" autofocus="autofocus" th:field="*{nome}" value=""> 
+				</div>
+				<div class="col">
+				<label for="nome">CNPJ</label> 
+				<input class="form-control" type="text" id="cnpj" autofocus="autofocus" th:field="*{cnpj}" value=""> 
+				</div>
+				<div class="w-100"></div>
+				<div class="col">
+				<label for="nome">E-mail</label>
+				<input class="form-control" type="text" id="email" autofocus="autofocus" th:field="*{email}" value="">
+				</div>
+				<div class="col">
+				<label for="nome">URL do logo</label>
+				<input class="form-control" type="text" id="logo" autofocus="autofocus" th:field="*{logo}" value="">
+				</div>
+				<div class="w-100"></div>
+				<div class="col">
 				<label for="cidade">cidade</label>
 				<select class="form-control" id="estado" th:field="*{cidade}">
 					<option th:each="cidade: ${cidades}" th:value="${cidade.id}"
 						th:text="${cidade}">Selecione...</option>
 				</select>
+			</div>
 				<div class="col-12 py-5">
 					<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"
 						class="alert alert-danger"></span>
 				</div>
 				<input type="hidden" id="id" th:field="*{id}" value="" /> <input
 					class="btn btn-dark" type="submit" value="Salvar">
-
+				</div>
 			</div>
 		</form>
 	</div>

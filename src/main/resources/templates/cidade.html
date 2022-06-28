@@ -26,28 +26,35 @@
 	<div class="container">
 		<form action="/salvarCidade" method="POST" th:object=${cidade}>
 		<div class="form-group">
-		
+		<div class="row">
+				<div class="col">
 				<label for="nome">Cidade</label> <input class="form-control" type="text" id="nome"
 				autofocus="autofocus" th:field="*{nome}" value="">
 				<div class="invalid-feedback"></div>
+			</div>
 				 <br>
+				 <div class="col">
 				<label for="cep">Cep</label> <input class="form-control" type="text" id="cep"
 				autofocus="autofocus" th:field="*{cep}" value="">
 				<div class="invalid-feedback"></div>
+				</div>
 				 <br>
-			<br> <br> <br> <label for="estado">Estado</label> <select class="form-control"
+			<br> <br> <br> 
+			<div class="col">
+			<label for="estado">Estado</label> <select class="form-control"
 				id="estado" th:field="*{estado}">
 				<option th:each="estado: ${estados}" th:value="${estado.id}"
 					th:text="${estado}">Selecione...</option>
 			</select>
+		</div>
 			<div class="col-12 py-5">
 					<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="alert alert-danger"></span>
 					<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="alert alert-danger"></span>
 				</div>
 			 <input type="hidden" id="id"
 				th:field="*{id}" value="" /> <input class="btn btn-dark" type="submit" value="Salvar">
-				
 		</div>
+	</div>
 		</form>
 	</div>
 </section>
