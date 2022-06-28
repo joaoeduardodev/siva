@@ -76,7 +76,7 @@ public class Empresa {
 	
 	@Override
 	public String toString() {
-		return nome + " - " ;
+		return nome;
 	}
 	@Override
 	public int hashCode() {
