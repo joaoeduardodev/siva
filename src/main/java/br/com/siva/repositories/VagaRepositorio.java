@@ -17,4 +17,7 @@ public interface VagaRepositorio extends JpaRepository<Vaga, Long> {
 	@Query(value = "SELECT * FROM vagas as v LEFT JOIN cidades as c ON v.cidade_id = c.id WHERE c.cep = :cep", nativeQuery=true)
 	List<Vaga> findByCep(@Param("cep") String cep);
 	
+	@Query(value = "SELECT * FROM vagas as v where v.titulo like %:text%", nativeQuery=true)
+	List<Vaga> findByText(@Param("text") String text);
+	
 }
