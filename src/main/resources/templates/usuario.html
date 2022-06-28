@@ -34,11 +34,12 @@
 			<div class="col">
 				<label for="senha">Senha</label><input class="form-control" type="text" id="senha" autofocus="autofocus" th:field="*{senha}"  value="">
 				<span th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}" class="text-danger"></span>
+			</div> 
 			</div>
-				<br> 
-			</div>
+		<div class="col-12 py-4">
 			<input type="hidden" id="id" th:field="*{id}" value="" />
 			<input class="btn btn-dark" type="submit" value="Salvar">
+		</div>
 		</form>
 	</div>
 	</div>

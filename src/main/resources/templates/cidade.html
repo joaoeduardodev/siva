@@ -30,16 +30,16 @@
 				<div class="col">
 				<label for="nome">Cidade</label> <input class="form-control" type="text" id="nome"
 				autofocus="autofocus" th:field="*{nome}" value="">
+				<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger"></span>
 				<div class="invalid-feedback"></div>
 			</div>
 				 <br>
 				 <div class="col">
 				<label for="cep">Cep</label> <input class="form-control" type="text" id="cep"
 				autofocus="autofocus" th:field="*{cep}" value="">
+				<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="text-danger"></span>
 				<div class="invalid-feedback"></div>
 				</div>
-				 <br>
-			<br> <br> <br> 
 			<div class="col">
 			<label for="estado">Estado</label> <select class="form-control"
 				id="estado" th:field="*{estado}">
@@ -47,14 +47,11 @@
 					th:text="${estado}">Selecione...</option>
 			</select>
 		</div>
-			<div class="col-12 py-5">
-					<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="alert alert-danger"></span>
-					<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="alert alert-danger"></span>
-				</div>
-			 <input type="hidden" id="id"
-				th:field="*{id}" value="" /> <input class="btn btn-dark" type="submit" value="Salvar">
+		<div class="col-12 py-4">
+			 <input type="hidden" id="id" th:field="*{id}" value="" /> <input class="btn btn-dark" type="submit" value="Salvar">
 		</div>
-	</div>
+		</div>
+		</div>
 		</form>
 	</div>
 </section>
