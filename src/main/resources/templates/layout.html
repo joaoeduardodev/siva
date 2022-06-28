@@ -43,6 +43,7 @@
 					th:href="@{/listarEstado}">Estados</a> <a
 					sec:authorize="hasAuthority('permissao')" class="p-2 text-dark"
 					th:href="@{/listarPermissao}">Permissao</a> 
+					<a sec:authorize="hasAuthority('empresa')" class="p-2 text-dark" th:href="@{/listarEmpresa}">Empresas</a>
 					<a sec:authorize="hasAuthority('vaga')" class="p-2 text-dark" th:href="@{/listarVaga}">Vagas</a>
 					<a class="p-2 text-dark" href="/listarRole">Acessos</a>
 			</nav>

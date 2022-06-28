@@ -18,7 +18,7 @@ public class HomeController {
 	public ModelAndView home() {		
 		ModelAndView mv = new ModelAndView("index.html");
 		mv.addObject("mensagem", "Futuro DASHBOARD");
-		mv.addObject("vagas", vagaRepo.findAll());
+		mv.addObject("vagas", vagaRepo.recentVagas());
 		
 		return mv;
 	}	
