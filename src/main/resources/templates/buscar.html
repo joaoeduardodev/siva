@@ -48,6 +48,12 @@
 			  
 				  <div th:id="collapse+${vaga.id}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
 					<div class="card-body" th:utext="${vaga.descricao}"></div>
+					<hr>
+					<div class="m-3 align-bottom">
+						<img th:src="${vaga.empresa.logo}" class="img-thumbnail" alt="..." style="height: 120px; width: 120px;">
+						<span >Empresa: </span>
+						<span th:text="${vaga.empresa.nome}"></span>
+					</div>
 				  </div>
 				</div>
 			  </div>
