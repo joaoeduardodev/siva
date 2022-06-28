@@ -10,16 +10,16 @@
 <section class="layout-content" layout:fragment="conteudo">
 
 	<div class="container">
-		<nav class="navbar navbar-expand-md bg-secondary text-light">
+		<nav class="navbar navbar-expand-md bg-danger text-light">
 			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
 						<h4>Cadastrar role</h4>
 					</li>
 				</ul>
-				<a class="btn btn-primary btn-md" href="cadastrarRole"
-					role="button"> <span class="oi oi-plus" title="Cadastro"
-					aria-hidden="true"></span> <span>Cadastrar Role</span>
+				<a class="btn btn-light btn-md" href="listarRole"
+					role="button"> <span class="oi oi-arrow-left" title="Cadastro"
+					aria-hidden="true"></span> <span>Listar roles</span>
 				</a>
 			</div>
 		</nav>
@@ -34,7 +34,7 @@
 					<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="alert alert-danger"></span>
 				</div>
             <input type="hidden" id="id" th:field="*{id}" value="" />
-            <input class="btn btn-primary" type="submit" value="Salvar">
+            <input class="btn btn-dark" type="submit" value="Salvar">
             </div>
           </form>
 	</div>

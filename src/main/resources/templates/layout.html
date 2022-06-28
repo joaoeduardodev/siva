@@ -46,7 +46,7 @@
 					<a sec:authorize="hasAuthority('vaga')" class="p-2 text-dark" th:href="@{/listarVaga}">Vagas</a>
 					<a class="p-2 text-dark" href="/listarRole">Acessos</a>
 			</nav>
-			<a id="button-login-logout" class="btn btn-outline-primary" href="/logout">Sair</a> <span
+			<a id="button-login-logout" class="btn btn-outline-danger" href="/logout">Sair</a> <span
 				sec:authentication="name" id="nome-usuario" class="ml-2 mr-2"></span>
 		</div>
 	</header>
