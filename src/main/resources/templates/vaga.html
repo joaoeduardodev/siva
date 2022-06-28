@@ -12,15 +12,15 @@
 <section class="layout-content" layout:fragment="conteudo">
 
 	<div class="container">
-		<nav class="navbar navbar-expand-md bg-secondary text-light">
+		<nav class="navbar navbar-expand-md bg-vermelho text-light">
 			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
-						<h4>Lista de Vagas</h4>
+						<h4>Cadastro de Vagas</h4>
 					</li>
 				</ul>
-				<a class="btn btn-danger btn-md" href="listarVaga" role="button"> <span class="oi oi-arrow-left"
-						title="Cadastro" aria-hidden="true"></span> <span>Voltar para listagem de vagas</span>
+				<a class="btn btn-light btn-md" href="listarVaga" role="button"> <span class="oi oi-arrow-left"
+						title="Cadastro" aria-hidden="true"></span> <span>Listar vagas</span>
 				</a>
 			</div>
 		</nav>
@@ -56,7 +56,7 @@
 					<span th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}" class="alert alert-danger"></span>
 					<span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}" class="alert alert-danger"></span>
 				</div>
-				<input type="hidden" id="id" th:field="*{id}" value="" /> <input class="btn btn-primary" type="submit"
+				<input type="hidden" id="id" th:field="*{id}" value="" /> <input class="btn btn-dark" type="submit"
 					value="Salvar">
 
 			</div>

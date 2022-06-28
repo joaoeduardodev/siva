@@ -10,16 +10,16 @@
 <section class="layout-content" layout:fragment="conteudo">
 
 	<div class="container">
-		<nav class="navbar navbar-expand-md bg-secondary text-light">
+		<nav class="navbar navbar-expand-md bg-vermelho text-light">
 			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
-						<h4>Cadastrar role</h4>
+						<h4>Cadastrar acessos</h4>
 					</li>
 				</ul>
-				<a class="btn btn-primary btn-md" href="cadastrarRole"
-					role="button"> <span class="oi oi-plus" title="Cadastro"
-					aria-hidden="true"></span> <span>Cadastrar Role</span>
+				<a class="btn btn-light btn-md" href="listarRole"
+					role="button"> <span class="oi oi-arrow-left" title="Cadastro"
+					aria-hidden="true"></span> <span>Listar acessos do usuário</span>
 				</a>
 			</div>
 		</nav>
@@ -29,12 +29,11 @@
 		<div class="form-group">
             <label for="nome">Nome</label>
             <input class="form-control" type="text" id="nome" autofocus="autofocus" th:field="*{nome}" value="">
-            <br><br><br><br>
             <div class="col-12 py-5">
 					<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="alert alert-danger"></span>
-				</div>
+			</div>
             <input type="hidden" id="id" th:field="*{id}" value="" />
-            <input class="btn btn-primary" type="submit" value="Salvar">
+            <input class="btn btn-dark" type="submit" value="Salvar">
             </div>
           </form>
 	</div>

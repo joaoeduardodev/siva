@@ -12,7 +12,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<link rel="icon" href="/image/favicon.png" />
+<link rel="icon" href="/image/favicon.svg" />
 
 <!-- Bootstrap core CSS -->
 <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -47,7 +47,7 @@
 					<a sec:authorize="hasAuthority('vaga')" class="p-2 text-dark" th:href="@{/listarVaga}">Vagas</a>
 					<a class="p-2 text-dark" href="/listarRole">Acessos</a>
 			</nav>
-			<a id="button-login-logout" class="btn btn-outline-primary" href="/logout">Sair</a> <span
+			<a id="button-login-logout" class="btn btn-outline-danger" href="/logout">Sair</a> <span
 				sec:authentication="name" id="nome-usuario" class="ml-2 mr-2"></span>
 		</div>
 	</header>

@@ -10,14 +10,14 @@
 <section class="layout-content"  layout:fragment="conteudo">
 
 	<div class="container">
-		<nav class="navbar navbar-expand-md bg-secondary text-light">
+		<nav class="navbar navbar-expand-md bg-vermelho text-light">
 			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
 						<h4>Lista de Cidades</h4>
 					</li>
 				</ul>
-				<a class="btn btn-primary btn-md" href="/cadastrarCidade" role="button"> <span
+				<a class="btn btn-light btn-md" href="/cadastrarCidade" role="button"> <span
 					class="oi oi-plus" title="Cadastro" aria-hidden="true"></span> <span>Cadastrar
 						Cidade</span>
 				</a>
@@ -26,7 +26,7 @@
 	</div>
 	<div class="container">
 		<div class="table-responsive">
-			<table class="table table-striped table-hover table-sm">
+			<table class="table table-hover  table-borderless">
 				<thead>
 					<tr>
 						<th>#</th>
@@ -42,7 +42,7 @@
 						<td th:text="${cidade.nome}"></td>
 						<td th:text="${cidade.cep}"></td>
 						<td th:text="${cidade.estado}"></td>
-						<td colspan="2"><a th:href="@{/editarCidade/{id}(id=${cidade.id})}" class="btn btn-primary btn-sm mr-2"
+						<td colspan="2"><a th:href="@{/editarCidade/{id}(id=${cidade.id})}" class="btn btn-dark btn-sm mr-2"
 							role="button"> <span class="oi oi-pencil" title="Editar"
 								aria-hidden="true"></span><a data-toggle="modal"
 								data-target="#modal-warning" class="btn btn-danger btn-sm ml-2" th:attr="data-target='#modal-warning'+${cidade.id}"><span
