@@ -33,19 +33,24 @@ public class VagaController {
 	private EmpresaRepositorio empresaRepo;
 	
 	@RequestMapping(value="vagas", method = RequestMethod.GET)
-	public @ResponseBody ModelAndView getVagaByCep(@RequestParam(value="cep", required = false, defaultValue = "") String cep){
+	public @ResponseBody ModelAndView getBuscaVaga(
+			@RequestParam(value="cep", required = false, defaultValue = "") String cep,
+			@RequestParam(value="text", required = false, defaultValue = "") String text){
 		
 		ModelAndView mv = new ModelAndView("buscar.html");
 		
-		if(cep.isEmpty()){
-			mv.addObject("vagas", vagaRepo.findAll());
-		}else {
+		if(!cep.isEmpty()){
 			mv.addObject("vagas", vagaRepo.findByCep(cep));
+		}else if(!text.isEmpty()){
+			mv.addObject("vagas", vagaRepo.findByText(text));
+		}else {	
+			mv.addObject("vagas", vagaRepo.findAll());
 		}
+		
 			
 		return mv;
 	}
-	
+
 	
 	@GetMapping("/listarVaga")
 	public ModelAndView listar() {		
