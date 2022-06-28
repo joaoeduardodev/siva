@@ -19,7 +19,7 @@
 						<h4>Cadastro de Vagas</h4>
 					</li>
 				</ul>
-				<a class="btn btn-light btn-md" href="listarVaga" role="button"> <span class="oi oi-arrow-left"
+				<a class="btn btn-light btn-md" href="/listarVaga" role="button"> <span class="oi oi-arrow-left"
 						title="Cadastro" aria-hidden="true"></span> <span>Listar vagas</span>
 				</a>
 			</div>
@@ -32,12 +32,14 @@
 				<label for="nome">titulo da vaga</label> <input class="form-control" type="text" id="titulo"
 					autofocus="autofocus" th:field="*{titulo}" value="">
 				<div class="invalid-feedback"></div>
+				<span th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}" class="text-danger"></span>
 				<br>
 				
-					<label for="descricao">Descrição da vaga</label> 
-					<input name="descricao" id="descricao" th:field="*{descricao}" type="hidden">
-					<div id="editor-container">
-					</div>
+				<label for="descricao">Descrição da vaga</label> 
+				<input name="descricao" id="descricao" th:field="*{descricao}" type="hidden">
+				<div id="editor-container">
+				</div>
+				<span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}" class="text-danger"></span>
 				 
 				<div class="invalid-feedback"></div>
 				<br>
@@ -52,11 +54,7 @@
 					th:text="${cidade}">Selecione...</option>
 				</select>
 
-				<div class="col-12 py-5">
-					<span th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}" class="alert alert-danger"></span>
-					<span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}" class="alert alert-danger"></span>
-				</div>
-				<input type="hidden" id="id" th:field="*{id}" value="" /> <input class="btn btn-dark" type="submit"
+				<input type="hidden" id="id" th:field="*{id}" value="" /> <input class="btn btn-dark mt-3" type="submit"
 					value="Salvar">
 
 			</div>

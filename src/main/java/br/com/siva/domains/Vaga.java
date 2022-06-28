@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
@@ -26,6 +27,7 @@ public class Vaga {
 	@NotBlank(message = "Preencha o campo titulo devidamente!!!")
 	private String titulo;
 	@NotBlank(message = "Preencha o campo descrição devidamente!!!")
+	@Lob
 	private String descricao;
 	@ManyToOne
 	private Cidade cidade;
