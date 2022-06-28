@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+/bin/
+src/main/java/br/com/siva/util/DataBase.java
