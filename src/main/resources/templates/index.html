@@ -10,11 +10,11 @@
 <body>
 	<section class="layout-content" layout:fragment="conteudo">
 
-	<div class="jumbotron text-white">
+	<div id="bg-jumbotron" class="jumbotron text-white">
 		<div id="banner-principal" class="p-5 rounded text-center m-3">
 			<h1 class="display-4 mx-5">SIVA</h1>
 			<h4>SIVA é uma plataforma completa, onde você encontra as melhores oportunidades</h4>
-			<button type="button" class="btn bg-vermelho text-white mt-3 btn-lg">Buscar Oportunidades</button>
+			<a target="_blank" class="btn bg-vermelho text-white mt-3 btn-lg" th:href="@{/vagas}">Buscar Oportunidades</a>
 		</div>
 	  </div>
 

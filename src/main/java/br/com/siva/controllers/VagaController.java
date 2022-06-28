@@ -10,6 +10,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.siva.domains.Vaga;
@@ -27,6 +31,21 @@ public class VagaController {
 	private CidadeRepositorio cidadeRepo;
 	@Autowired
 	private EmpresaRepositorio empresaRepo;
+	
+	@RequestMapping(value="vagas", method = RequestMethod.GET)
+	public @ResponseBody ModelAndView getVagaByCep(@RequestParam(value="cep", required = false, defaultValue = "") String cep){
+		
+		ModelAndView mv = new ModelAndView("buscar.html");
+		
+		if(cep.isEmpty()){
+			mv.addObject("vagas", vagaRepo.findAll());
+		}else {
+			mv.addObject("vagas", vagaRepo.findByCep(cep));
+		}
+			
+		return mv;
+	}
+	
 	
 	@GetMapping("/listarVaga")
 	public ModelAndView listar() {		

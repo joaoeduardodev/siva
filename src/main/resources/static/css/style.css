@@ -23,9 +23,8 @@ body {
 /* 
  * banner principal
  */
-.jumbotron {
+#bg-jumbotron {
 	background-image: url("https://cdn.wizard.com.br/wp-content/uploads/2021/04/16152147/ambientes-de-trabalho-em-ingles.jpg");
-
 	background-size: cover;
 }
 

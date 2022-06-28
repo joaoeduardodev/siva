@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="https://www.w3.org/1999/xhtl"
+	layout:decorate="~{layout}">
+
+<head>
+<meta charset="UTF-8">
+<title>Buscar oportunidades</title>
+</head>
+
+<body>
+	<section class="layout-content" layout:fragment="conteudo">
+
+	<div class="jumbotron text-white bg-vermelho">
+		<div class="row">
+			<div class="col-md-6">
+				<h1 class="display-4">Oportunidades</h1>
+				<h4>Encontre aqui sua vaga</h4>
+			</div>		
+			<div class="col-md-6 mt-3">
+			<form th:action="@{/vagas}">
+				<div class="input-group mb-3">
+				  <input type="text" th:name="cep" class="form-control" placeholder="Informe CEP" aria-describedby="button-addon1">
+				  <div class="input-group-append">
+				    <button class="btn btn-light" type="submit" id="button-addon1">Realizar busca por CEP</button>
+				  </div>
+				</div>
+			</form>
+			<form th:action="@{/vagas}">
+				<div class="input-group mb-3">
+				  <input type="text" th:name="text" value="" class="form-control" placeholder="Informe o texto a ser buscado" aria-describedby="button-addon2">
+				  <div class="input-group-append">
+				    <button class="btn btn-light" type="submit" id="button-addon2">Realizar busca por texto</button>
+				  </div>
+				</div>
+				</form>
+			</div>		
+		</div>
+	  </div>
+
+	  <section class="container">
+			<h1 class="text-center my-5">Resultados</h1>
+			<div id="accordion" class="pt-5">
+				<div class="card my-4" th:each="vaga : ${vagas}">
+				  <div class="card-header" id="headingOne">
+					  <span th:text="${vaga.titulo+' | Empresa: ' +vaga.empresa.nome}" class="text-left btn btn-lg btn-block" data-toggle="collapse" th:data-target="${'#collapse'+vaga.id}" aria-expanded="true" th:aria-controls="collapse+${vaga.id}">
+					  </span>
+				  </div>
+			  
+				  <div th:id="collapse+${vaga.id}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+					<div class="card-body" th:utext="${vaga.descricao}"></div>
+				  </div>
+				</div>
+			  </div>
+	  </section>
+
+
+	</section>
+</body>
+
+</html>
