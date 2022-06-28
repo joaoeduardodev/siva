@@ -33,7 +33,7 @@
 						<th>Empresa</th>
 						<th>CNPJ</th>
 						<th>E-mail</th>
-						<th>URL do logo</th>
+						<!-- <th>URL do logo</th> -->
 						<th>Cidade</th>
 						<th>Ação</th>
 					</tr>
@@ -44,7 +44,7 @@
 						<td th:text="${empresa.nome}"></td>
 						<td th:text="${empresa.cnpj}"></td>
 						<td th:text="${empresa.email}"></td>
-						<td th:text="${empresa.logo}"></td>
+						<!-- <td th:text="${empresa.logo}"></td> -->
 						<td th:text="${empresa.cidade}"></td>
 						<td colspan="2"><a th:href="@{/editarEmpresa/{id}(id=${empresa.id})}" class="btn btn-dark btn-sm mr-2"
 							role="button"> <span class="oi oi-pencil" title="Editar"
