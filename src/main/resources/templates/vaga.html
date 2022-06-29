@@ -37,6 +37,7 @@
 				
 				<label for="descricao">Descrição da vaga</label> 
 				<input name="descricao" id="descricao" th:field="*{descricao}" type="hidden">
+				<!-- <span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}" class="text-danger"></span> -->
 				<div id="editor-container">
 				</div>
 				<span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}" class="text-danger"></span>
@@ -53,10 +54,10 @@
 				<option th:each="cidade: ${cidades}" th:value="${cidade.id}"
 					th:text="${cidade}">Selecione...</option>
 				</select>
-
+				<div class="col-12 py-4">
 				<input type="hidden" id="id" th:field="*{id}" value="" /> <input class="btn btn-dark mt-3" type="submit"
 					value="Salvar">
-
+				</div>
 			</div>
 		</form>
 	</div>

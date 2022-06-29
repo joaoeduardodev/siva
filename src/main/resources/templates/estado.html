@@ -30,20 +30,20 @@
 			<div class="row">
 			<div class="col">
             <label for="nome">Estado</label>
-            <input class="form-control" type="text" id="nome" autofocus="autofocus" th:field="*{nome}" value="">
+			<input class="form-control" type="text" id="nome" autofocus="autofocus" th:field="*{nome}" value="">
+			<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger"></span>
 			<br>
 			</div>
 			<div class="col">
             <label for="sigla">Sigla</label>
-            <input class="form-control" type="text" id="sigla" th:field="*{sigla}" value=""/>
+			<input class="form-control" type="text" id="sigla" th:field="*{sigla}" value=""/>
+			<span th:if="${#fields.hasErrors('sigla')}" th:errors="*{sigla}" class="text-danger"></span>
 			<br>
 			</div>
-            <div class="col-12 py-5">
-					<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="alert alert-danger"></span>
-					<span th:if="${#fields.hasErrors('sigla')}" th:errors="*{sigla}" class="alert alert-danger"></span>
-				</div>
-            <input type="hidden" id="id" th:field="*{id}" value="" />
-            <input class="btn btn-dark" type="submit" value="Salvar">
+			<div class="col-12 py-4">
+            	<input type="hidden" id="id" th:field="*{id}" value="" />
+				<input class="btn btn-dark" type="submit" value="Salvar">
+			</div>
             </div>
           </form>
 		</div>
