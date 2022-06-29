@@ -19,7 +19,7 @@
 			<div class="col-md-6 mt-3">
 			<form th:action="@{/vagas}">
 				<div class="input-group mb-3">
-				  <input type="text" th:name="cep" class="form-control input-border-left" placeholder="Informe CEP" aria-describedby="button-addon1">
+				  <input id="asd" type="text" th:name="cep" class="form-control input-border-left" placeholder="Informe CEP" aria-describedby="button-addon1">
 				  <div class="input-group-append">
 				    <button class="btn btn-light btn-border-right" type="submit" id="button-addon1">Realizar busca por CEP</button>
 				  </div>
@@ -27,7 +27,7 @@
 			</form>
 			<form th:action="@{/vagas}">
 				<div class="input-group mb-3">
-				  <input type="text" th:name="text" value="" class="form-control input-border-left" placeholder="Informe o texto a ser buscado" aria-describedby="button-addon2">
+				  <input id="buscaTexto" type="text" th:name="text" value="" class="form-control input-border-left" placeholder="Informe o texto a ser buscado" aria-describedby="button-addon2">
 				  <div class="input-group-append">
 				    <button class="btn btn-light btn-border-right" type="submit" id="button-addon2">Realizar busca por texto</button>
 				  </div>

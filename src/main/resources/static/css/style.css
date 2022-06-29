@@ -27,10 +27,10 @@ body {
  * text
  */
 .vermelho {
-	color: #ba5959;
+	color: #ba5959 !important;
 }
 .bg-vermelho {
-	background-color: #ba5959;
+	background-color: #ba5959 !important;
 }
 
 /* 
