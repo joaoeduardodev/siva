@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.siva.domains.Estado;
+import br.com.siva.repositories.CidadeRepositorio;
 import br.com.siva.repositories.EstadoRepositorio;
 
 
@@ -21,6 +22,10 @@ public class EstadoController {
 	
 	@Autowired
 	private EstadoRepositorio estadoRepo;
+	
+
+	@Autowired
+	private CidadeRepositorio cidadeRepo;
 	
 	@GetMapping("/listarEstado")
 	public ModelAndView listar() {		
@@ -59,8 +64,15 @@ public class EstadoController {
 	@GetMapping("/excluirEstado/{id}")
 	public ModelAndView excluir(@PathVariable("id") Long id) {
 		Optional<Estado> estado = estadoRepo.findById(id);
+		ModelAndView mv = new ModelAndView("redirect:/listarEstado");
+		if(cidadeRepo.findByEstado(id) > 0) {
+			mv.addObject("messageType", "error");
+			mv.addObject("message", "Exitem dados que fazem o uso desse estado.");
+			return mv;
+		}
 		estadoRepo.delete(estado.get());
-		
-		return new ModelAndView("redirect:/listarEstado");
+		mv.addObject("messageType", "success");
+		mv.addObject("message", "Estado removido com sucesso.");
+		return mv;
 	}
 }
