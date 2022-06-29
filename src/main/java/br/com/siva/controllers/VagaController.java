@@ -1,5 +1,7 @@
 package br.com.siva.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.siva.domains.Vaga;
+import br.com.siva.domains.dto.VagaDTO;
 import br.com.siva.repositories.CidadeRepositorio;
 import br.com.siva.repositories.EmpresaRepositorio;
 import br.com.siva.repositories.VagaRepositorio;
@@ -31,6 +34,10 @@ public class VagaController {
 	private CidadeRepositorio cidadeRepo;
 	@Autowired
 	private EmpresaRepositorio empresaRepo;
+	
+
+	private List<Vaga> vagasRetornadas = new ArrayList<>();
+	
 	
 	@RequestMapping(value="vagas", method = RequestMethod.GET)
 	public @ResponseBody ModelAndView getBuscaVaga(
@@ -51,6 +58,31 @@ public class VagaController {
 		return mv;
 	}
 
+
+	@RequestMapping("/buscaTexto")
+	@ResponseBody
+	public List<VagaDTO> buscaVaga(@RequestParam(value="text", required = false, defaultValue = "") String text) {
+		List<VagaDTO> vagas = new ArrayList<>();
+		
+		try {
+			if(text.length() >= 3) {
+				vagasRetornadas = vagaRepo.findByText(text);
+			}
+			
+			for (Vaga vaga : vagasRetornadas) {
+				if (!vaga.getTitulo().isEmpty()) {
+					VagaDTO dto = new VagaDTO(vaga.getTitulo(),vaga.getDescricao(),vaga.getCidade(),vaga.getEmpresa());
+					vagas.add(dto);
+				}
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		
+		System.out.println(vagas);
+		
+		return vagas;
+	}
 	
 	@GetMapping("/listarVaga")
 	public ModelAndView listar() {		
