@@ -20,7 +20,7 @@ public class Role {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;	
 
-	@NotBlank(message = "Preencha o nome da role devidamente!!!")
+	@NotBlank(message = "Preencha o campo de acesso devidamente!!!")
 	private String nome;
 	
 	public Long getId() {
