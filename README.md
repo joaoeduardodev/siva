@@ -9,3 +9,7 @@ Crie o banco de dados:
 ```sh
 create database siva
 ```
+
+
+
+Recomendos utilizar a IDE de desenvolvimente NetBeans (mas você pode usar a que achar melhor)
